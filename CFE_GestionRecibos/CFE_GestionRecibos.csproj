@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -70,6 +71,7 @@
     <Compile Include="Administrador\RegistroDetalles.Designer.cs">
       <DependentUpon>RegistroDetalles.cs</DependentUpon>
     </Compile>
+    <Compile Include="ClassesManage.cs" />
     <Compile Include="Cliente\Cliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +162,7 @@
     <Compile Include="Empleado\ReporteTarifas.Designer.cs">
       <DependentUpon>ReporteTarifas.cs</DependentUpon>
     </Compile>
+    <Compile Include="EnlaceDB.cs" />
     <Compile Include="LOG_IN.cs">
       <SubType>Form</SubType>
     </Compile>

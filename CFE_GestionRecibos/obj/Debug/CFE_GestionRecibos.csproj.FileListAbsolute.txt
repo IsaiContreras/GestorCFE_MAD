@@ -28,3 +28,33 @@ C:\Users\alexi\source\repos\CFE_GestionRecibos\CFE_GestionRecibos\obj\Debug\CFE_
 C:\Users\alexi\source\repos\CFE_GestionRecibos\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Administrador.RegistroDetalles.resources
 C:\Users\alexi\source\repos\CFE_GestionRecibos\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Empleado.GeneradorRecibo.resources
 C:\Users\alexi\source\repos\CFE_GestionRecibos\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Teléfono.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.csprojAssemblyReference.cache
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Administrador.Administrador.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Administrador.Agregar.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Administrador.Registro.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Administrador.RegistroDetalles.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Cliente.Cliente.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Cliente.Información.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Cliente.PagoEfectivo.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Cliente.PagoTarjeta.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Cliente.PagoTransf.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Cliente.Recibos.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Empleado.AgregarCliente.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Empleado.AgregarServicio.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Empleado.ConsumoHistórico.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Empleado.Empleado.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Empleado.GeneradorRecibo.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Empleado.Información.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Empleado.ReporteConsumos.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Empleado.ReporteGeneral.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Empleado.ReporteTarifas.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.LOG_IN.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Properties.Resources.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Teléfono.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.csproj.GenerateResource.cache
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.csproj.CoreCompileInputs.cache
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.exe
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.pdb
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\bin\Debug\CFE_GestionRecibos.exe.config
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\bin\Debug\CFE_GestionRecibos.exe
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\bin\Debug\CFE_GestionRecibos.pdb
