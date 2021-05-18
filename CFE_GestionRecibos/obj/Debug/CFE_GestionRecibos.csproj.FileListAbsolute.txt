@@ -58,3 +58,5 @@ D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD
 D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\bin\Debug\CFE_GestionRecibos.exe.config
 D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\bin\Debug\CFE_GestionRecibos.exe
 D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\bin\Debug\CFE_GestionRecibos.pdb
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Empleado.Consumo.resources
+D:\alexi\Documents\CARPETAS DE PROYECTOS\Proyectos VISUAL\CFE_GestionRecibos MAD\CFE_GestionRecibos\obj\Debug\CFE_GestionRecibos.Empleado.Tarifa.resources

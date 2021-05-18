@@ -21,5 +21,13 @@ namespace CFE_GestionRecibos.Empleado
         {
             Close();
         }
+
+        private void btn_buscar_Click(object sender, EventArgs e)
+        {
+            int año = Convert.ToInt32(tbx_año.Text);
+            EnlaceDB link = new EnlaceDB();
+            dgv_reporte.DataSource = link.ReporteConsumos(año);
+            dgv_reporte.AutoResizeColumns();
+        }
     }
 }

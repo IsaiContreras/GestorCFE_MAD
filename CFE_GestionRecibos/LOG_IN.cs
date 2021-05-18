@@ -13,7 +13,7 @@ namespace CFE_GestionRecibos
     public partial class LOG_IN : Form
     {
         private byte tries = 0;
-        private string mailused;
+        private string mailused = "";
         List<LogRem> rem_logs = new List<LogRem>();
 
         public LOG_IN()
@@ -49,6 +49,11 @@ namespace CFE_GestionRecibos
 
         private void btn_login_Click(object sender, EventArgs e)
         {
+            if (cbx_email.Text.Length == 0)
+            {
+                MessageBox.Show("Capture el correo electrónico.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
             if (tbx_password.TextLength != 8)
             {
                 MessageBox.Show("La contraseña debe contener 8 caracteres.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
@@ -121,7 +126,7 @@ namespace CFE_GestionRecibos
                                     link.ElimRecordUser(Convert.ToInt16(cbx_email.SelectedValue));
                                 }
                                 Empleado.Empleado dialogEmp = new Empleado.Empleado();
-                                dialogEmp.id = log.id;
+                                dialogEmp.id = Convert.ToInt32(log.id);
                                 dialogEmp.username = log.username;
                                 Hide();
                                 dialogEmp.ShowDialog();
@@ -168,7 +173,7 @@ namespace CFE_GestionRecibos
                                     link.ElimRecordUser(Convert.ToInt16(cbx_email.SelectedValue));
                                 }
                                 Administrador.Administrador dialogAdmin = new Administrador.Administrador();
-                                dialogAdmin.id = log.id;
+                                dialogAdmin.id = Convert.ToInt16(log.id);
                                 dialogAdmin.username = log.username;
                                 Hide();
                                 dialogAdmin.ShowDialog();
