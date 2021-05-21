@@ -132,11 +132,11 @@ namespace CFE_GestionRecibos
         {
             id_ser = id;
             med = Convert.ToInt64(dato.ItemArray[0]);
-            string domic = Convert.ToString(dato.ItemArray[1]);
-            dom = new Domicilio(domic);
-            if (Convert.ToString(dato.ItemArray[2]) == "Industrial")
+            string domic = Convert.ToString(dato.ItemArray[2]);
+            if (Convert.ToString(dato.ItemArray[1]) == "Industrial")
                 tipo_ser = true;
             else tipo_ser = false;
+            dom = new Domicilio(domic);
         }
         public ServicioClass(long id_cl, int num_emp, long medidor, Domicilio domic, bool tipo_servicio)
         {
@@ -146,14 +146,14 @@ namespace CFE_GestionRecibos
             dom = domic;
             tipo_ser = tipo_servicio;
         }
-        public long id_ser;
-        public long med;
-        public DateTime fecha_alta;
-        public bool tipo_ser;
-        public Domicilio dom;
-        public bool activo;
-        public long id_cl;
-        public int num_emp;
+        public long id_ser { get; set; }
+        public long med { get; set; }
+        public DateTime fecha_alta { get; set; }
+        public bool tipo_ser { get; set; }
+        public Domicilio dom { get; set; }
+        public bool activo { get; set; }
+        public long id_cl { get; set; }
+        public int num_emp { get; set; }
     }
 
     public class TarifaClass

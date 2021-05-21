@@ -12,6 +12,8 @@ namespace CFE_GestionRecibos.Cliente
 {
     public partial class Recibos : Form
     {
+        public long id_rec;
+
         public Recibos()
         {
             InitializeComponent();
@@ -44,6 +46,30 @@ namespace CFE_GestionRecibos.Cliente
 
         private void Recibos_Load(object sender, EventArgs e)
         {
+            EnlaceDB link = new EnlaceDB();
+            DataRow recibo = link.DatosRecibo(id_rec);
+            st_username.Text = "Nombre cliente: " + Convert.ToString(recibo.ItemArray[0]);
+            st_identity.Text = "ID: " + Convert.ToString(recibo.ItemArray[1]);
+            st_medidor.Text = "Medidor: " + Convert.ToString(recibo.ItemArray[2]);
+            st_tiposerv.Text = "Tipo de servicio: " + Convert.ToString(recibo.ItemArray[3]);
+            Domicilio show = new Domicilio(Convert.ToString(recibo.ItemArray[4]));
+            st_domicilio.Text = "Domicilio: " + show.getFormat();
+            st_periodo.Text = "Periodo: " + recibo.ItemArray[5].ToString() + "/" + recibo.ItemArray[6].ToString();
+            st_consbas.Text = recibo.ItemArray[7].ToString() + " kW";
+            st_consint.Text = recibo.ItemArray[8].ToString() + " kW";
+            st_consexced.Text = recibo.ItemArray[9].ToString() + " kW";
+            st_constot.Text = recibo.ItemArray[10].ToString() + " kW";
+            st_prebas.Text = "$" + string.Format("{0:0.00}", recibo.ItemArray[11]);
+            st_preint.Text = "$" + string.Format("{0:0.00}", recibo.ItemArray[12]);
+            st_preexc.Text = "$" + string.Format("{0:0.00}", recibo.ItemArray[13]);
+            st_pabas.Text = "$" + string.Format("{0:0.00}", recibo.ItemArray[14]);
+            st_paint.Text = "$" + string.Format("{0:0.00}", recibo.ItemArray[15]);
+            st_paexc.Text = "$" + string.Format("{0:0.00}", recibo.ItemArray[16]);
+            st_pretot.Text = "$" + string.Format("{0:0.00}", recibo.ItemArray[17]);
+            st_papend.Text = "$" + string.Format("{0:0.00}", recibo.ItemArray[18]);
+            st_paiva.Text = "$" + string.Format("{0:0.00}", recibo.ItemArray[19]);
+            st_patot.Text = "$" + string.Format("{0:0.00}", recibo.ItemArray[20]);
+
             rdb_efectivo.Checked = true;
         }
 

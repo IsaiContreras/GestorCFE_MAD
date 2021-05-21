@@ -664,6 +664,54 @@ namespace CFE_GestionRecibos
                 desconectar();
             }
         }
+        public DataTable LlenarRecibos(long id_serv)
+        {
+            DataTable dt = new DataTable();
+            conectar();
+            string qry = "sp_Recibos";
+            _comandosql = new SqlCommand(qry, _conexion);
+            _comandosql.CommandType = CommandType.StoredProcedure;
+            _comandosql.CommandTimeout = 9000;
+
+            var param1 = _comandosql.Parameters.Add("@proc", SqlDbType.VarChar, 16);
+            param1.Value = "searchbyserv";
+            var param2 = _comandosql.Parameters.Add("@id_ser", SqlDbType.BigInt);
+            param2.Value = id_serv;
+
+            _adaptador.SelectCommand = _comandosql;
+            _adaptador.Fill(dt);
+            return dt;
+        }
+        public DataRow DatosRecibo(long id_rec)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                conectar();
+                string qry = "sp_Recibos";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 9000;
+
+                var param1 = _comandosql.Parameters.Add("@proc", SqlDbType.VarChar, 16);
+                param1.Value = "searchbyid";
+                var param2 = _comandosql.Parameters.Add("@id_rec", SqlDbType.BigInt);
+                param2.Value = id_rec;
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(dt);
+
+                return dt.Rows[0];
+            }
+            catch(SqlException e){
+                MessageBox.Show(e.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                return null;
+            }
+            finally
+            {
+                desconectar();
+            }
+        }
         public DataTable NivelesKilowatts()
         {
             try
@@ -739,6 +787,39 @@ namespace CFE_GestionRecibos
                 param1.Value = "searchbyyear";
                 var param2 = _comandosql.Parameters.Add("@año", SqlDbType.Int);
                 param2.Value = año;
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(dt);
+
+                return dt;
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            finally
+            {
+                desconectar();
+            }
+        }
+        public DataTable ConsumoHistorico(int año, long medidor)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                conectar();
+                string qry = "sp_Consumos";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 9000;
+
+                var param1 = _comandosql.Parameters.Add("@proc", SqlDbType.VarChar, 16);
+                param1.Value = "historic";
+                var param2 = _comandosql.Parameters.Add("@año", SqlDbType.Int);
+                param2.Value = año;
+                var param3 = _comandosql.Parameters.Add("@med", SqlDbType.BigInt);
+                param3.Value = medidor;
 
                 _adaptador.SelectCommand = _comandosql;
                 _adaptador.Fill(dt);
@@ -1103,6 +1184,42 @@ namespace CFE_GestionRecibos
                 desconectar();
             }
         }
+        public bool GenerarRecibos(int año, sbyte mes, byte tipo_serv)
+        {
+            try
+            {
+                conectar();
+                string qry = "sp_Recibos";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 9000;
+
+                var param1 = _comandosql.Parameters.Add("@proc", SqlDbType.VarChar, 16);
+                param1.Value = "generate";
+                var param2 = _comandosql.Parameters.Add("@año", SqlDbType.Int);
+                param2.Value = año;
+                var param3 = _comandosql.Parameters.Add("@mes", SqlDbType.TinyInt);
+                param3.Value = mes;
+                var param4 = _comandosql.Parameters.Add("@tip_ser", SqlDbType.Bit);
+                param4.Value = tipo_serv;
+                
+                _adaptador.InsertCommand = _comandosql;
+                _comandosql.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (SqlException e)
+            {
+                return false;
+            }
+            finally
+            {
+                desconectar();
+            }
+        }
+
+        // CLIENTE
+
 
         // REGISTRO ACTIVIDAD
         public void RegistrarActividad(string action, int num_emp, long id_inserted)

@@ -20,7 +20,7 @@ namespace CFE_GestionRecibos.Empleado
             InitializeComponent();
         }
 
-        private void UpdateDgvs()//ACTUALIZA DGVS
+        private void UpdateClientesDgv()//ACTUALIZA DGVS
         {
             EnlaceDB link = new EnlaceDB();
             dgv_clientes.DataSource = null;
@@ -30,8 +30,25 @@ namespace CFE_GestionRecibos.Empleado
             dgv_servicios.Columns.Clear();
             dgv_servicios.Rows.Clear();
             dgv_clientes.DataSource = link.LlenarClientes();
-            long idcliente = Convert.ToInt64(dgv_clientes.SelectedRows[0].Cells[0].Value);
-            dgv_servicios.DataSource = link.LlenarServicios(idcliente);
+            if (dgv_clientes.Rows.Count > 0)
+            {
+                btn_modclient.Enabled = true;
+                btn_elimclient.Enabled = true;
+                btn_infocliente.Enabled = true;
+                btn_agrserv.Enabled = true;
+                btn_showserv.Enabled = true;
+            }
+            else
+            {
+                btn_modclient.Enabled = false;
+                btn_elimclient.Enabled = false;
+                btn_infocliente.Enabled = false;
+                btn_agrserv.Enabled = false;
+                btn_showserv.Enabled = false;
+                btn_modserv.Enabled = false;
+                btn_elimserv.Enabled = false;
+                btn_conshist.Enabled = false;
+            }
         }
 
         private void UpdateServiciosDgv()//ACTUALIZA DGV SERVICIOS
@@ -51,6 +68,18 @@ namespace CFE_GestionRecibos.Empleado
                 dgv_servicios.Rows[i].Cells[2].Value = formated;
             }
             dgv_servicios.AutoResizeColumns();
+            if (dgv_servicios.Rows.Count > 0)
+            {
+                btn_modserv.Enabled = true;
+                btn_elimserv.Enabled = true;
+                btn_conshist.Enabled = true;
+            }
+            else
+            {
+                btn_modserv.Enabled = false;
+                btn_elimserv.Enabled = false;
+                btn_conshist.Enabled = false;
+            }
         }
 
         private void btn_agrclient_Click(object sender, EventArgs e)//AGREGA CLIENTE
@@ -59,7 +88,7 @@ namespace CFE_GestionRecibos.Empleado
             dialogAC.id_emp = id;
             if (dialogAC.ShowDialog() == DialogResult.OK)
             {
-                UpdateDgvs();
+                UpdateClientesDgv();
             }
         }
 
@@ -71,7 +100,7 @@ namespace CFE_GestionRecibos.Empleado
             dialogMC.Text = "Modificar cliente";
             if (dialogMC.ShowDialog() == DialogResult.OK)
             {
-                UpdateDgvs();
+                UpdateClientesDgv();
             }
         }
 
@@ -129,6 +158,7 @@ namespace CFE_GestionRecibos.Empleado
         private void btn_conshist_Click(object sender, EventArgs e)//CONSUMO HISTORICO
         {
             ConsumoHistórico dialogCH = new ConsumoHistórico();
+            dialogCH.medidor = Convert.ToInt64(dgv_servicios.SelectedRows[0].Cells[0].Value);
             dialogCH.ShowDialog();
         }
 
@@ -142,7 +172,7 @@ namespace CFE_GestionRecibos.Empleado
                 if (link.EliminarCliente(id_cl))
                 {
                     MessageBox.Show("Cliente eliminado con éxito", "Información");
-                    UpdateDgvs();
+                    UpdateClientesDgv();
                 }
             }
         }
@@ -173,9 +203,7 @@ namespace CFE_GestionRecibos.Empleado
         {
             st_identity.Text = "ID: " + id.ToString();
             st_username.Text = "Usuario: " + username;
-            EnlaceDB link = new EnlaceDB();
-            dgv_clientes.DataSource = link.LlenarClientes();
-            dgv_clientes.AutoResizeColumns();
+            UpdateClientesDgv();
         }
 
         private void btn_genrec_Click(object sender, EventArgs e)//GENERA RECIBO

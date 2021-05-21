@@ -27,8 +27,11 @@ namespace CFE_GestionRecibos.Administrador
         private void btn_detalles_Click(object sender, EventArgs e)
         {
             RegistroDetalles dialogRD = new RegistroDetalles();
-            dialogRD.id = Convert.ToInt64(dgv_registro.SelectedRows[0].Cells[0].Value);
-            dialogRD.ShowDialog();
+            if (dgv_registro.Rows.Count != 0)
+            {
+                dialogRD.id = Convert.ToInt64(dgv_registro.SelectedRows[0].Cells[0].Value);
+                dialogRD.ShowDialog();
+            }
         }
 
         private void Registro_Load(object sender, EventArgs e)

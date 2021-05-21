@@ -43,8 +43,7 @@ namespace CFE_GestionRecibos.Administrador
         private void btn_edtemp_Click(object sender, EventArgs e)
         {
             Agregar dialogB = new Agregar();
-            int id_emp = Convert.ToInt32(dgv_empleados.SelectedRows[0].Cells[0].Value);
-            dialogB.id_emp_mod = id_emp;
+            dialogB.id_emp_mod = Convert.ToInt32(dgv_empleados.SelectedRows[0].Cells[0].Value);
             dialogB.Text = "Editar empleado";
             if (dialogB.ShowDialog() == DialogResult.OK)
             {
@@ -61,11 +60,9 @@ namespace CFE_GestionRecibos.Administrador
 
         private void Administrador_Load(object sender, EventArgs e)
         {
-            EnlaceDB link = new EnlaceDB();
             st_identity.Text = "ID: " + id.ToString();
             st_username.Text = "Usuario: " + username;
-            dgv_empleados.DataSource = link.LlenarEmpleados();
-            dgv_empleados.AutoResizeColumns();
+            UpdateDgv();
         }
 
         private void btn_elimemp_Click(object sender, EventArgs e)
