@@ -209,6 +209,7 @@ namespace CFE_GestionRecibos.Empleado
         private void btn_genrec_Click(object sender, EventArgs e)//GENERA RECIBO
         {
             GeneradorRecibo dialogGR = new GeneradorRecibo();
+            dialogGR.num_emp = id;
             dialogGR.Show();
         }
 

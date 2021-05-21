@@ -12,6 +12,8 @@ namespace CFE_GestionRecibos.Cliente
 {
     public partial class PagoEfectivo : Form
     {
+        public long id_rec;
+
         public PagoEfectivo()
         {
             InitializeComponent();
@@ -30,8 +32,20 @@ namespace CFE_GestionRecibos.Cliente
 
         private void btn_pagar_Click(object sender, EventArgs e)
         {
-            DialogResult = DialogResult.OK;
-            Close();
+            if (tbx_cantidad.TextLength == 0)
+            {
+                return;
+            }
+            if (!RegexUtilities.IsDecimalNumber(tbx_cantidad.Text))
+            {
+                return;
+            }
+            EnlaceDB link = new EnlaceDB();
+            if (link.Pago(id_rec, Convert.ToDouble(tbx_cantidad.Text)))
+            {
+                DialogResult = DialogResult.OK;
+                Close();
+            }
         }
     }
 }

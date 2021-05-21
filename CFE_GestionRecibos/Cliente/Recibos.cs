@@ -25,21 +25,25 @@ namespace CFE_GestionRecibos.Cliente
             if (rdb_efectivo.Checked == true)
             {
                 PagoEfectivo dialogPE = new PagoEfectivo();
+                dialogPE.id_rec = id_rec;
                 res = dialogPE.ShowDialog();
             }
             else if (rdb_tarjeta.Checked == true)
             {
                 PagoTarjeta dialogPT = new PagoTarjeta();
+                dialogPT.id_rec = id_rec;
                 res = dialogPT.ShowDialog();
             }
             else
             {
                 PagoTransf dialogPTr = new PagoTransf();
+                dialogPTr.id_rec = id_rec;
                 res = dialogPTr.ShowDialog();
             }
             if (res == DialogResult.OK)
             {
                 MessageBox.Show("Pago realizado con éxito.", "Información");
+                DialogResult = DialogResult.OK;
                 Close();
             }
         }

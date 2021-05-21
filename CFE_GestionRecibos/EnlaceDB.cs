@@ -1184,7 +1184,7 @@ namespace CFE_GestionRecibos
                 desconectar();
             }
         }
-        public bool GenerarRecibos(int año, sbyte mes, byte tipo_serv)
+        public bool GenerarRecibos(int año, sbyte mes, byte tipo_serv, int num_emp)
         {
             try
             {
@@ -1202,6 +1202,8 @@ namespace CFE_GestionRecibos
                 param3.Value = mes;
                 var param4 = _comandosql.Parameters.Add("@tip_ser", SqlDbType.Bit);
                 param4.Value = tipo_serv;
+                var param5 = _comandosql.Parameters.Add("@num_emp", SqlDbType.Int);
+                param5.Value = num_emp;
                 
                 _adaptador.InsertCommand = _comandosql;
                 _comandosql.ExecuteNonQuery();
@@ -1210,6 +1212,7 @@ namespace CFE_GestionRecibos
             }
             catch (SqlException e)
             {
+                MessageBox.Show(e.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 return false;
             }
             finally
@@ -1219,7 +1222,38 @@ namespace CFE_GestionRecibos
         }
 
         // CLIENTE
+        public bool Pago(long id_rec, double pago)
+        {
+            try
+            {
+                conectar();
+                string qry = "sp_Recibos";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 9000;
 
+                var param1 = _comandosql.Parameters.Add("@proc", SqlDbType.VarChar, 16);
+                param1.Value = "payment";
+                var param2 = _comandosql.Parameters.Add("@id_rec", SqlDbType.BigInt);
+                param2.Value = id_rec;
+                var param3 = _comandosql.Parameters.Add("@pago", SqlDbType.Money);
+                param3.Value = pago;
+
+                _adaptador.UpdateCommand = _comandosql;
+                _comandosql.ExecuteNonQuery();
+
+                return true;
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show(e.ToString(), "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            finally
+            {
+                desconectar();
+            }
+        }
 
         // REGISTRO ACTIVIDAD
         public void RegistrarActividad(string action, int num_emp, long id_inserted)
@@ -1241,106 +1275,6 @@ namespace CFE_GestionRecibos
             {
 
             }
-        }
-
-        public DataTable get_Users()
-        {
-            var msg = "";
-            DataTable tabla = new DataTable();
-            try
-            {
-                conectar();
-                string qry = "Select Nombre, email, Fecha_modif from Usuarios where Activo = 0;";
-                _comandosql = new SqlCommand(qry, _conexion);
-                _comandosql.CommandType = CommandType.Text;
-                _comandosql.CommandTimeout = 1200;
-
-                _adaptador.SelectCommand = _comandosql;
-                _adaptador.Fill(tabla);
-
-            }
-            catch (SqlException e)
-            {
-                msg = "Excepción de base de datos: \n";
-                msg += e.Message;
-                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
-            finally
-            {
-                desconectar();
-            }
-
-            return tabla;
-        }
-
-        public DataTable get_Deptos(string opc)
-        {
-            var msg = "";
-            DataTable tabla = new DataTable();
-            try
-            {
-                conectar();
-                string qry = "sp_Gestiona_Deptos";
-                _comandosql = new SqlCommand(qry, _conexion);
-                _comandosql.CommandType = CommandType.StoredProcedure;
-                _comandosql.CommandTimeout = 1200;
-
-                var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Char, 1);
-                parametro1.Value = opc;
-
-
-                _adaptador.SelectCommand = _comandosql;
-                _adaptador.Fill(tabla);
-
-            }
-            catch (SqlException e)
-            {
-                msg = "Excepción de base de datos: \n";
-                msg += e.Message;
-                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
-            finally
-            {
-                desconectar();
-            }
-
-            return tabla;
-        }
-        public bool Add_Deptos(string opc, string depto)
-        {
-            var msg = "";
-            var add = true;
-            try
-            {
-                conectar();
-                string qry = "sp_Gestiona_Deptos";
-                _comandosql = new SqlCommand(qry, _conexion);
-                _comandosql.CommandType = CommandType.StoredProcedure;
-                _comandosql.CommandTimeout = 1200;
-
-                var parametro1 = _comandosql.Parameters.Add("@Opc", SqlDbType.Char, 1);
-                parametro1.Value = opc;
-                var parametro2 = _comandosql.Parameters.Add("@Nombre", SqlDbType.VarChar, 20);
-                parametro2.Value = depto;
-
-                _adaptador.InsertCommand = _comandosql;
-                
-                _comandosql.ExecuteNonQuery();
-
-            }
-            catch (SqlException e)
-            {
-                add = false;
-                msg = "Excepción de base de datos: \n";
-                msg += e.Message;
-                MessageBox.Show(msg, "Warning!", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-            }
-            finally
-            {
-                desconectar();                
-            }
-
-            return add;
         }
 
     }

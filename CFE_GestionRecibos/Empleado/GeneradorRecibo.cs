@@ -12,6 +12,8 @@ namespace CFE_GestionRecibos.Empleado
 {
     public partial class GeneradorRecibo : Form
     {
+        public int num_emp;
+
         public GeneradorRecibo()
         {
             InitializeComponent();
@@ -44,7 +46,7 @@ namespace CFE_GestionRecibos.Empleado
             if (validar())
             {
                 EnlaceDB link = new EnlaceDB();
-                if (link.GenerarRecibos(Convert.ToInt32(tbx_año.Text), Convert.ToSByte(cbx_mes.Text), Convert.ToByte(cbx_tiposerv.SelectedIndex)))
+                if (link.GenerarRecibos(Convert.ToInt32(tbx_año.Text), Convert.ToSByte(cbx_mes.Text), Convert.ToByte(cbx_tiposerv.SelectedIndex), num_emp))
                 {
                     string msg = "Recibos de " + cbx_mes.Text + " de " + tbx_año.Text + " del tipo " + cbx_tiposerv.Text + " generados.";
                     MessageBox.Show(msg, "Información");

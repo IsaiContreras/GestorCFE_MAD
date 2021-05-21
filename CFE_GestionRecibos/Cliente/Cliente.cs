@@ -33,7 +33,11 @@ namespace CFE_GestionRecibos.Cliente
         {
             Recibos dialogR = new Recibos();
             dialogR.id_rec = Convert.ToInt64(dgv_recibos.SelectedRows[0].Cells[0].Value);
-            dialogR.ShowDialog();
+            if (dialogR.ShowDialog() == DialogResult.OK)
+            {
+                EnlaceDB link = new EnlaceDB();
+                dgv_recibos.DataSource = link.LlenarRecibos(Convert.ToInt64(cbx_servicios.SelectedValue));
+            }
         }
 
         private void Cliente_Load(object sender, EventArgs e)
