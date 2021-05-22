@@ -100,17 +100,18 @@ namespace CFE_GestionRecibos.Empleado
                 {
                     case 0:
                         MessageBox.Show("Tarifa registrada.", "Información");
-                        DialogResult = DialogResult.OK;
-                        Close();
                         break;
                     case 1:
                         MessageBox.Show("No se pudo registrar la tarifa.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        DialogResult = DialogResult.Cancel;
-                        Close();
                         break;
                     default:
                         break;
                 }
+                tbx_año.Text = "";
+                tbx_tarbas.Text = "";
+                tbx_tarexc.Text = "";
+                tbx_tarint.Text = "";
+                cbx_mes.SelectedIndex = -1;
             }
         }
     }

@@ -231,5 +231,21 @@ namespace CFE_GestionRecibos.Empleado
         {
             UpdateServiciosDgv();
         }
+
+        private void dgv_clientes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dgv_servicios.DataSource = null;
+            btn_modserv.Enabled = false;
+            btn_elimserv.Enabled = false;
+            btn_conshist.Enabled = false;
+        }
+
+        private void dgv_clientes_SelectionChanged(object sender, EventArgs e)
+        {
+            dgv_servicios.DataSource = null;
+            btn_modserv.Enabled = false;
+            btn_elimserv.Enabled = false;
+            btn_conshist.Enabled = false;
+        }
     }
 }

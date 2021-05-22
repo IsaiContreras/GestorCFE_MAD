@@ -741,6 +741,40 @@ namespace CFE_GestionRecibos
                 desconectar();
             }
         }
+        public DataTable ReporteGeneral(int año, byte mes, byte tipo)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                string qry = "sp_Recibos";
+                _comandosql = new SqlCommand(qry, _conexion);
+                _comandosql.CommandType = CommandType.StoredProcedure;
+                _comandosql.CommandTimeout = 9000;
+
+                var param1 = _comandosql.Parameters.Add("@proc", SqlDbType.VarChar, 16);
+                param1.Value = "generalreport";
+                var param2 = _comandosql.Parameters.Add("@año", SqlDbType.Int);
+                param2.Value = año;
+                var param3 = _comandosql.Parameters.Add("@mes", SqlDbType.TinyInt);
+                if (mes == 0) param3.Value = null;
+                else param3.Value = mes;
+                var param4 = _comandosql.Parameters.Add("@tip_ser", SqlDbType.Bit);
+                if (tipo == 2) param4.Value = null;
+                else param4.Value = tipo;
+
+                _adaptador.SelectCommand = _comandosql;
+                _adaptador.Fill(dt);
+                return dt;
+            }
+            catch (SqlException e)
+            {
+                return null;
+            }
+            finally
+            {
+                desconectar();
+            }
+        }
         public DataTable ReporteTarifas(int año)
         {
             try

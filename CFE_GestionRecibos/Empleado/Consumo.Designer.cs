@@ -154,7 +154,7 @@
             this.btn_ok.Name = "btn_ok";
             this.btn_ok.Size = new System.Drawing.Size(86, 26);
             this.btn_ok.TabIndex = 7;
-            this.btn_ok.Text = "Aceptar";
+            this.btn_ok.Text = "Agregar";
             this.btn_ok.UseVisualStyleBackColor = false;
             this.btn_ok.Click += new System.EventHandler(this.btn_ok_Click);
             // 
@@ -166,7 +166,7 @@
             this.btn_cancel.Name = "btn_cancel";
             this.btn_cancel.Size = new System.Drawing.Size(86, 26);
             this.btn_cancel.TabIndex = 8;
-            this.btn_cancel.Text = "Cancelar";
+            this.btn_cancel.Text = "Salir";
             this.btn_cancel.UseVisualStyleBackColor = false;
             this.btn_cancel.Click += new System.EventHandler(this.btn_cancel_Click);
             // 

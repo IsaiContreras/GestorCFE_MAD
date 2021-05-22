@@ -104,7 +104,8 @@ namespace CFE_GestionRecibos.Empleado
             tbx_munic.Text = servMod.dom.munic;
             tbx_estado.Text = servMod.dom.estado;
             tbx_cp.Text = servMod.dom.cp;
-            cbx_servicio.SelectedIndex = Convert.ToInt32(servMod.tipo_ser);
+            if (servMod.tipo_ser) cbx_servicio.SelectedIndex = 1;
+            else cbx_servicio.SelectedIndex = 0;
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
@@ -160,15 +161,14 @@ namespace CFE_GestionRecibos.Empleado
 
         private void AgregarServicio_Load(object sender, EventArgs e)
         {
-            if(Text == "Modificar servicio")
+            st_identity.Text = "ID: " + id.ToString();
+            st_username.Text = "Usuario: " + username;
+            cbx_servicio.SelectedIndex = 0;
+            if (Text == "Modificar servicio")
             {
                 llenarInfo();
                 btn_ok.Text = "Aceptar";
             }
-
-            st_identity.Text = "ID: " + id.ToString();
-            st_username.Text = "Usuario: " + username;
-            cbx_servicio.SelectedIndex = 0;
         }
     }
 }

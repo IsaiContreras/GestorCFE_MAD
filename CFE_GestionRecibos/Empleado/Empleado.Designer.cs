@@ -95,6 +95,8 @@
             this.dgv_clientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv_clientes.Size = new System.Drawing.Size(668, 252);
             this.dgv_clientes.TabIndex = 7;
+            this.dgv_clientes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_clientes_CellContentClick);
+            this.dgv_clientes.SelectionChanged += new System.EventHandler(dgv_clientes_SelectionChanged);
             // 
             // dgv_servicios
             // 

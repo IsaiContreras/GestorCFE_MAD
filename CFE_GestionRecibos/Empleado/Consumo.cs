@@ -84,17 +84,17 @@ namespace CFE_GestionRecibos.Empleado
                 {
                     case 0:
                         MessageBox.Show("Conusmo registrado.", "Información");
-                        DialogResult = DialogResult.OK;
-                        Close();
                         break;
                     case 1:
                         MessageBox.Show("No se pudo registrar el consumo.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                        DialogResult = DialogResult.Cancel;
-                        Close();
                         break;
                     default:
                         break;
                 }
+                tbx_medidor.Text = "";
+                tbx_consumo.Text = "";
+                tbx_año.Text = "";
+                cbx_mes.SelectedIndex = -1;
             }
         }
 

@@ -132,8 +132,8 @@ namespace CFE_GestionRecibos
         {
             id_ser = id;
             med = Convert.ToInt64(dato.ItemArray[0]);
-            string domic = Convert.ToString(dato.ItemArray[2]);
-            if (Convert.ToString(dato.ItemArray[1]) == "Industrial")
+            string domic = Convert.ToString(dato.ItemArray[1]);
+            if (Convert.ToString(dato.ItemArray[2]) == "Industrial")
                 tipo_ser = true;
             else tipo_ser = false;
             dom = new Domicilio(domic);
