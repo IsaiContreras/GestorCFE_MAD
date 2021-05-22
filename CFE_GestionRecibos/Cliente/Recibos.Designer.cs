@@ -64,6 +64,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.st_constot = new System.Windows.Forms.Label();
             this.st_pretot = new System.Windows.Forms.Label();
+            this.st_pagado = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // st_username
@@ -271,9 +272,9 @@
             this.label18.ForeColor = System.Drawing.SystemColors.Control;
             this.label18.Location = new System.Drawing.Point(13, 339);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(96, 25);
+            this.label18.Size = new System.Drawing.Size(104, 25);
             this.label18.TabIndex = 0;
-            this.label18.Text = "Pago IVA";
+            this.label18.Text = "Cargo IVA";
             // 
             // st_paiva
             // 
@@ -468,12 +469,24 @@
             this.st_pretot.TabIndex = 11;
             this.st_pretot.Text = "Pre_tot";
             // 
+            // st_pagado
+            // 
+            this.st_pagado.AutoSize = true;
+            this.st_pagado.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.st_pagado.ForeColor = System.Drawing.SystemColors.Control;
+            this.st_pagado.Location = new System.Drawing.Point(486, 148);
+            this.st_pagado.Name = "st_pagado";
+            this.st_pagado.Size = new System.Drawing.Size(133, 29);
+            this.st_pagado.TabIndex = 12;
+            this.st_pagado.Text = "*PAGADO*";
+            // 
             // Recibos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(662, 548);
+            this.Controls.Add(this.st_pagado);
             this.Controls.Add(this.st_pretot);
             this.Controls.Add(this.st_constot);
             this.Controls.Add(this.label1);
@@ -559,5 +572,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label st_constot;
         private System.Windows.Forms.Label st_pretot;
+        private System.Windows.Forms.Label st_pagado;
     }
 }

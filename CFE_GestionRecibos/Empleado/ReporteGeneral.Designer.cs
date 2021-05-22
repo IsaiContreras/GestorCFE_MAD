@@ -96,7 +96,7 @@
             // 
             this.cbx_mes.BackColor = System.Drawing.Color.DimGray;
             this.cbx_mes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbx_mes.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.cbx_mes.ForeColor = System.Drawing.SystemColors.Control;
             this.cbx_mes.FormattingEnabled = true;
             this.cbx_mes.Items.AddRange(new object[] {
             "Todos",
@@ -141,6 +141,7 @@
             // 
             this.cbx_tipo.BackColor = System.Drawing.Color.DimGray;
             this.cbx_tipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbx_tipo.ForeColor = System.Drawing.SystemColors.Control;
             this.cbx_tipo.FormattingEnabled = true;
             this.cbx_tipo.Items.AddRange(new object[] {
             "Ambos",

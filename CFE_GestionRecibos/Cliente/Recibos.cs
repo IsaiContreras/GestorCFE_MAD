@@ -73,7 +73,9 @@ namespace CFE_GestionRecibos.Cliente
             st_papend.Text = "$" + string.Format("{0:0.00}", recibo.ItemArray[18]);
             st_paiva.Text = "$" + string.Format("{0:0.00}", recibo.ItemArray[19]);
             st_patot.Text = "$" + string.Format("{0:0.00}", recibo.ItemArray[20]);
-
+            bool pagado = Convert.ToBoolean(recibo.ItemArray[21]);
+            if (pagado) st_pagado.Text = "**PAGADO**";
+            else st_pagado.Text = "";
             rdb_efectivo.Checked = true;
         }
 
